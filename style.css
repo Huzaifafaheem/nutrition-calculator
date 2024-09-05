@@ -1,0 +1,492 @@
+.tab5 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .tab5 button {
+    width: 100px;
+    height: 140px;
+    background-color: transparent;
+    border-radius: 8px;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* transition: 0.3s; */
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     color: #404040;
+  }
+  .tab5 button img{
+   width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+        object-fit: contain;
+  }
+  .bottomLine{
+  height: 2px;
+  background-color: rgba(70, 70, 70, 0.479);
+  }
+  .activeTab {
+    background-color: white;
+    border: 1.5px solid #E79B8F !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: #FFF9F8 !important;
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  .calculator {
+  padding-top: 70px;
+      display: flex;
+  /* padding-bottom: 100px; */
+  
+  }
+  
+  
+  
+  
+  .mainTabSection{
+  width: 60%;
+  margin-bottom: 80px;
+  }
+  .rightSectionManu{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  }
+  
+  .mainManu {
+    /* width: 50%; */
+  
+    height: 700px;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    position: sticky;
+    top: 0;
+  }
+  
+  
+  
+  
+  
+  .secondCalculate{
+  background-image:url("https://muchoburrito.com/wp-content/uploads/2024/07/Group-1000002013.png") ;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 330px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  }
+  
+  .nutrition-facts-table {
+  width: 90%;
+  height: 93%;
+  background-color: #E34A34;
+  color: white;
+  border-radius: 8px;
+  }
+  
+  .mainHeadingNutrition{
+      text-align: center;
+  padding: 15px 0px 15px 0px; /* Top, Right, Bottom, Left */
+  border-bottom: 1px solid #FF8270;
+  /* font-weight: 900; */
+  }
+  .mainHeadingNutrition h2{
+  font-weight: bold;
+  font-size: 40px;
+  font-family: Barlow;
+  }
+  
+  .nutritionName{
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  border-bottom: 1px solid #FF8270;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: Barlow;
+  }
+  
+  .widthContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  height: 40px;
+  }
+  
+  
+  .tdSpan {
+  display: flex;
+  justify-content: end;
+  }
+  
+  
+  
+  .totalMainHeading{
+  font-size: 40px;
+  font-weight: 700;
+  color: #07342C;
+  font-family: Barlow;
+  }
+  
+  
+  
+  
+  .form-check-label{
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Barlow;
+  }
+  
+  
+  .form-check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+    }
+   
+    /* Hide the browser's default radio button */
+  .form-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  
+    }
+   
+    /* Create a custom radio button */
+  .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1.5px solid black;
+  margin-top: 2px;
+  margin-left: -5px;
+    }
+   
+   
+    /* When the radio button is checked, add a blue background */
+  .form-check input:checked ~ .checkmark {
+  background-color: white;
+  border: 1.5px solid #00A14E;
+    }
+   
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+    }
+   
+    /* Show the indicator (dot/circle) when checked */
+  .form-check input:checked ~ .checkmark:after {
+  display: block;
+    }
+   
+    /* Style the indicator (dot/circle) */
+  .form-check .checkmark:after {
+   top: 4px;
+   left: 4px;
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background: #00A14E;
+    }
+  
+  .form-check input:checked ~ .form-check-label {
+  color: #00A14E;
+    }
+  
+  
+  
+  
+  
+  
+  .mt-5 h3{
+  font-size: 30px;
+  font-family: Barlow;
+  }
+  
+  
+  
+  
+  
+  .active {
+  background-color: #00A14E !important;
+  color: white !important;
+    }
+   
+  .selectProtein1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+    }
+  
+  
+  .select {
+  width: 220px;
+  height: 55px;
+  border: none;
+  background-color: #ECECEC;
+  font-size: 19px;
+  color: #000000;
+  font-family: Barlow;
+  font-weight: 500;
+  
+    }
+    .select:focus, .select:hover {
+        background-color: #ECECEC;
+        color: black;
+    }
+    .select2 {
+  width: 120px;
+  height: 55px;
+  border: none;
+  background-color: #ECECEC;
+  font-size: 19px;
+  color: #000000;
+  font-family: Barlow;
+  font-weight: 500;
+    }
+    .select2:focus, .select2:hover {
+        background-color: #ECECEC;
+        color: black;
+    }
+    .select3 {
+  width: 260px;
+  height: 55px;
+  border: none;
+  background-color: #ECECEC;
+  font-size: 19px;
+  color: #000000;
+  font-family: Barlow;
+  font-weight: 500;
+    }
+    .select3:focus, .select3:hover {
+        background-color: #ECECEC;
+        color: black;
+    }
+    .select4 {
+  width: 140px;
+  height: 55px;
+  border: none;
+  background-color: #ECECEC;
+  font-size: 19px;
+  color: #000000;
+  font-family: Barlow;
+  font-weight: 500;
+    }
+    .select4:focus, .select4:hover {
+        background-color: #ECECEC;
+        color: black;
+    }
+    .select5 {
+  width: 300px;
+  height: 55px;
+  border: none;
+  background-color: #ECECEC;
+  font-size: 19px;
+  color: #000000;
+  font-family: Barlow;
+  font-weight: 500;
+    }
+   .select5:focus, .select5:hover {
+        background-color: #ECECEC;
+        color: black;
+    }
+  
+  
+  
+  
+    .calculator-container {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  max-width: none;
+  text-align: center;
+  display: none; /* Hide on desktop by default */
+    }
+   
+    .toggle-button {
+  background-color: #E34A34;
+  color: white;
+  border: none;
+  margin-bottom: 10px !important;
+  cursor: pointer;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  z-index: 2;
+  display: none; /* Hide on desktop */
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+    }
+    .toggle-button:hover{
+        color: none;
+    }
+    .toggle-button img{
+      width: 25px;
+  }
+    .calculator-content {
+  background-color: #e34b34f5;
+  color: white;
+  padding: 25px;
+  display: none;
+  height: 100vh;
+  font-size: 16px;
+    }
+     .calculator-content img{
+       margin-top: 145px;
+    }
+    .calculator-content h2{
+  font-size: 35px;
+  margin-bottom: 50px;
+    }
+    .nutrition-info {
+  text-align: center;
+      margin-top: 20px;
+  
+    }
+   
+    .nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 23px;
+  font-size: 16px;
+    }
+   
+    .nutrition-item span {
+  font-weight: bold;
+  font-size: 16px;
+    }
+   
+  .first-calculator-content{
+      background-color: #E34A34;
+      display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 86px;
+  border-radius: 25px 25px 0px 0px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .first-nutrition-item{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 14px;
+  }
+  
+  .crossSVG{
+  width: 30px;
+  height: 30px;
+  margin-left: 280px;
+  }
+  
+  
+  .allNone {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out,
+    height 0.5s ease-in-out;
+  }
+  
+  .allNone.show {
+    height: auto;
+    opacity: 1;
+    animation: slideDown 0.6s ease-in-out;
+  }
+  
+  
+  @keyframes slideDown {
+    0%, 95% {
+      transform: translateY(-300px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  
+    @media (max-width: 770px) {
+  .tabs-container {
+   overflow-x: auto;
+  }
+   
+  .tablinks {
+   flex: 1 0 auto;
+   width: auto;
+  }
+  .tab5{
+  gap: 30px;
+  }
+  /*.firstTab{*/
+  /* margin-left: 20px;*/
+  /*}*/
+  .tabs-container::-webkit-scrollbar {
+  display: none;
+   }
+      .rightSectionManu{
+     display: none;
+      }
+  .mainTabSection{
+  width: 100%;
+  margin-bottom: 130px;
+  }
+  
+  
+  
+  .calculator-container {
+  display: block; /* Show on mobile */
+   }
+  
+   .toggle-button {
+  display: block; /* Show on mobile */
+   }
+   .calculator{
+      padding-left: 15px;
+   }
+    }
+   

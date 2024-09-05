@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tab5 tabs-container container">
+          <button class="tablinks firstTab" onclick="openCity(event, 'Burrito')">
+            <img src="https://muchoburrito.com/wp-content/uploads/2024/07/burrito.png" alt="" />
+            Burritos
+          </button>
+          <button class="tablinks" onclick="openCity(event, 'Tacos')">
+            <img src="https://muchoburrito.com/wp-content/uploads/2024/07/Tacos-1-1.png" alt="" />
+            Tacos
+          </button>
+          <button class="tablinks" onclick="openCity(event, 'Quesadilla')">
+            <img src="https://muchoburrito.com/wp-content/uploads/2024/07/QUESADILLAS-1.png" alt="" />
+            Quesadilla
+          </button>
+          <button class="tablinks" onclick="openCity(event, 'Forkids')">
+            <img src="https://muchoburrito.com/wp-content/uploads/2024/07/kids-burrito.png" alt="" />
+            For Kids
+          </button>
+          <button class="tablinks" onclick="openCity(event, 'Sides')">
+            <img src="https://muchoburrito.com/wp-content/uploads/2024/07/sides.png" alt="" />
+            Sides
+          </button>
+          <button class="tablinks" onclick="openCity(event, 'Desserts')">
+            <img src="https://muchoburrito.com/wp-content/uploads/2024/07/desserts.png" alt="" />
+            Desserts
+          </button>
+          <button class="tablinks" onclick="openCity(event, 'Drinks')">
+            <img src="https://muchoburrito.com/wp-content/uploads/2024/07/drinks.png" alt="" />
+            Drinks
+          </button>
+        </div>
+      </div>
+  
+  
+      <div class="container">
+        <div class="calculator">
+          <div class="mainTabSection">
+            <!-- first tab -->
+            <div id="Burrito" class="tabcontent">
+              <h2 class="mb-3 totalMainHeading">BURRITOS</h2>
+              <!--one size List -->
+              <form class="selectProtein1" action="">
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" checked onclick="largeSize(this.value)" value="small" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Small Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="regular" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Regular Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="large" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Large Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="bowl" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Mucho Burrito</label>
+                </label>
+              </form>
+              <!-- two Select Base -->
+             <div class="mt-5" id="baseGroup">
+                <h3>Select Base</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select4" id="Protein" onclick="jsonFetch (this.value,'baseGroup','toppingsGroup')" value="brownRice">BROWN RICE</button>
+                  <button class="select" id="Protein" onclick="jsonFetch (this.value,'baseGroup','toppingsGroup')" value="CilantroRice">CILANTRO LIME RICE</button>
+                  <button class="select" id="Protein" onclick="jsonFetch (this.value,'baseGroup','toppingsGroup')" value="Romaine">ROMAINE LETTUCE</button>
+                </div>
+              </div>
+              <!-- three Select Toppings -->
+              <div class="mt-5 allNone" id="toppingsGroup">
+                <h3>Select Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select" id="Protein" onclick="jsonFetch (this.value,'toppingsGroup','fillingsGroup')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2" id="Protein" onclick="jsonFetch (this.value,'toppingsGroup','fillingsGroup')" value="Steak">STEAK</button>
+                  <button class="select2" id="Protein" onclick="jsonFetch (this.value,'toppingsGroup','fillingsGroup')" value="Shrimp">SHRIMP</button>
+                  <button class="select2" id="Protein" onclick="jsonFetch (this.value,'toppingsGroup','fillingsGroup')" value="Chorizo">CHORIZO</button>
+                  <button class="select3" id="Protein" onclick="jsonFetch (this.value,'toppingsGroup','fillingsGroup')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2" id="Protein" onclick="jsonFetch (this.value,'toppingsGroup','fillingsGroup')" value="Chicken">CHICKEN</button>
+                  <button class="select" id="Protein" onclick="jsonFetch (this.value,'toppingsGroup','fillingsGroup')" value="porkCarnitas">PORK CARNITAS</button>
+                </div>
+              </div>
+  
+  
+              <!-- four Select Fillings -->
+              <div class="mt-5 allNone" id="fillingsGroup">
+                <h3>Select Fillings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select3" id="Protein" onclick="jsonFetch (this.value,'fillingsGroup','ToppingsGroup')" value="ChipotleBeans">CHIPOTLE BLACK BEANS</button>
+                  <button class="select" id="Protein" onclick="jsonFetch (this.value,'fillingsGroup','ToppingsGroup')" value="PintoBeans">PINTO BEANS</button>
+                  <button class="select" id="Protein" onclick="jsonFetch (this.value,'fillingsGroup','ToppingsGroup')" value="FajitaVeggies">FAJITA VEGGIES</button>
+                 
+                </div>
+              </div>
+                <!-- five Toppings -->
+              <div class="mt-5 allNone" id="ToppingsGroup">
+                <h3>Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select" id="Toppings" onclick="jsonFetch (this.value,'ToppingsGroup','garnishesGroup')" value="PicoDeGallo">PICO DE GALLO</button>
+                  <button class="select2" id="Toppings" onclick="jsonFetch (this.value,'ToppingsGroup','garnishesGroup')" value="Salsa">SALSA</button>
+                  <button class="select2" id="Toppings" onclick="jsonFetch (this.value,'ToppingsGroup','garnishesGroup')" value="Guac">GUAC</button>
+                  <button class="select2" id="Toppings" onclick="jsonFetch (this.value,'ToppingsGroup','garnishesGroup')" value="Pickles">PICKLES</button>
+                  <button class="select2" id="Toppings" onclick="jsonFetch (this.value,'ToppingsGroup','garnishesGroup')" value="onions">ONIONS</button>
+                  <button class="select4" id="Toppings" onclick="jsonFetch (this.value,'ToppingsGroup','garnishesGroup')" value="Tomatoes">TOMATOES</button>
+                  <button class="select2" id="Toppings" onclick="jsonFetch (this.value,'ToppingsGroup','garnishesGroup')" value="Corn">CORN</button>
+  
+                </div>
+              </div>
+                <!-- six Garnishes & Sauces-->
+             <div class="mt-5 allNone" id="garnishesGroup">
+                <h3>Garnishes & Sauces</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select4" id="Toppings" onclick="jsonFetch (this.value)" value="Cilantro">CILANTRO</button>
+                  <button class="select4" id="Toppings" onclick="jsonFetch (this.value)" value="jalapeno">JALAPEÑO</button>
+                  <button class="select" id="Toppings" onclick="jsonFetch (this.value)" value="BurritoSauce">BURRITO SAUCE</button>
+                  <button class="select" id="Toppings" onclick="jsonFetch (this.value)" value="sourCream">SOUR CREAM</button>
+                  <button class="select3" id="Toppings" onclick="jsonFetch (this.value)" value="MontereyCheese">MONTEREY JACK CHEESE</button>
+                  <button class="select5" id="Toppings" onclick="jsonFetch (this.value)" value="SmokySauce">SMOKY TEQUILA-LIME SAUCE</button>
+   
+                </div>
+              </div>
+  
+  
+  
+  
+             
+            </div>
+  
+            <!-- second tab -->
+            <div id="Tacos" class="tabcontent">
+               <h2 class="mb-3 totalMainHeading">Tacos</h2>
+               <!--one size List -->
+               <form class="selectProtein1" action="">
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" checked onclick="largeSize(this.value)" value="small" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Small Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" onclick="largeSize(this.value)" value="regular" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Regular Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" onclick="largeSize(this.value)" value="large" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Large Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" onclick="largeSize(this.value)" value="bowl" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Mucho Burrito</label>
+                </label>
+              </form>
+              <!-- two Select Base -->
+               <div class="mt-5" id="baseGroup1">
+                <h3>Select Base</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select4 Protein" id="Protein" onclick="jsonFetch (this.value,'baseGroup1','toppingsGroup1')" value="brownRice1">BROWN RICE</button>
+                  <button class="select Protein" id="Protein" onclick="jsonFetch (this.value,'baseGroup1','toppingsGroup1')" value="CilantroRice1">CILANTRO LIME RICE</button>
+                  <button class="select Protein" id="Protein" onclick="jsonFetch (this.value,'baseGroup1','toppingsGroup1')" value="Romaine1">ROMAINE LETTUCE</button>
+                </div>
+              </div>
+              <!-- three Select Toppings -->
+             <div class="mt-5 allNone" id="toppingsGroup1">
+                <h3>Select Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup1', 'fillingsGroup1')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup1', 'fillingsGroup1')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup1', 'fillingsGroup1')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup1', 'fillingsGroup1')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'toppingsGroup1', 'fillingsGroup1')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup1', 'fillingsGroup1')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value, 'toppingsGroup1', 'fillingsGroup1')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+              <!-- four Select Fillings -->
+             <div class="mt-5 allNone" id="fillingsGroup1">
+                <h3>Select Fillings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'fillingsGroup1','ToppingsGroup1')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup1','ToppingsGroup1')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup1','ToppingsGroup1')" value="Shrimp">SHRIMP</button>
+                 
+                </div>
+              </div>
+                <!-- five Toppings -->
+               <div class="mt-5 allNone" id="ToppingsGroup1">
+                <h3>Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup1','garnishesGroup1')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup1','garnishesGroup1')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup1','garnishesGroup1')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup1','garnishesGroup1')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'ToppingsGroup1','garnishesGroup1')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup1','garnishesGroup1')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup1','garnishesGroup1')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+                <!-- six Garnishes & Sauces-->
+             <div class="mt-5 allNone" id="garnishesGroup1">
+                <h3>Garnishes & Sauces</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value)" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value)" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chicken">CHICKEN</button>
+   
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- third tab -->
+  
+            <div id="Quesadilla" class="tabcontent">
+              <h2 class="mb-3 totalMainHeading">Quesadilla</h2>
+               <!--one size List -->
+               <form class="selectProtein1" action="">
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" checked onclick="largeSize(this.value)" value="small" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Small Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="regular" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Regular Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="large" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Large Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="bowl" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Mucho Burrito</label>
+                </label>
+              </form>
+              <!-- two Select Base -->
+              <div class="mt-5" id="baseGroup2">
+                <h3>Select Base</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select4 Protein" onclick="jsonFetch (this.value,'baseGroup2','toppingsGroup2')" value="brownRice">BROWN RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup2','toppingsGroup2')" value="CilantroRice">CILANTRO LIME RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup2','toppingsGroup2')" value="Romaine">ROMAINE LETTUCE</button>
+                </div>
+              </div>
+              <!-- three Select Toppings -->
+              <div class="mt-5 allNone" id="toppingsGroup2">
+                <h3>Select Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup2','fillingsGroup2')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup2','fillingsGroup2')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup2','fillingsGroup2')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup2','fillingsGroup2')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'toppingsGroup2','fillingsGroup2')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup2','fillingsGroup2')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup2','fillingsGroup2')" value="porkCarnitas">PORK CARNITAS</button>
+                </div>
+              </div>
+  
+              <!-- four Select Fillings -->
+              <div class="mt-5 allNone" id="fillingsGroup2">
+                <h3>Select Fillings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'fillingsGroup2','ToppingsGroup2')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup2','ToppingsGroup2')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup2','ToppingsGroup2')" value="Shrimp">SHRIMP</button>
+                 
+                </div>
+              </div>
+                <!-- five Toppings -->
+              <div class="mt-5 allNone" id="ToppingsGroup2">
+                <h3>Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup2','garnishesGroup2')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup2','garnishesGroup2')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup2','garnishesGroup2')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup2','garnishesGroup2')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'ToppingsGroup2','garnishesGroup2')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup2','garnishesGroup2')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup2','garnishesGroup2')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+                <!-- six Garnishes & Sauces-->
+              <div class="mt-5 allNone" id="garnishesGroup2">
+                <h3>Garnishes & Sauces</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value)" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value)" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chicken">CHICKEN</button>
+   
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- fourth tab -->
+  
+            <div id="Forkids" class="tabcontent">
+              <h2 class="mb-3 totalMainHeading">For Kids</h2>
+               <!--one size List -->
+               <form class="selectProtein1" action="">
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" checked onclick="largeSize(this.value)" value="small" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Small Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="regular" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Regular Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="large" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Large Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="bowl" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Mucho Burrito</label>
+                </label>
+              </form>
+              <!-- two Select Base -->
+              <div class="mt-5" id="baseGroup3">
+                <h3>Select Base</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select4 Protein" onclick="jsonFetch (this.value,'baseGroup3','toppingsGroup3')" value="brownRice">BROWN RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup3','toppingsGroup3')" value="CilantroRice">CILANTRO LIME RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup3','toppingsGroup3')" value="Romaine">ROMAINE LETTUCE</button>
+                </div>
+              </div>
+              <!-- three Select Toppings -->
+              <div class="mt-5 allNone" id="toppingsGroup3">
+                <h3>Select Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup3','fillingsGroup3')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup3','fillingsGroup3')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup3','fillingsGroup3')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup3','fillingsGroup3')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'toppingsGroup3','fillingsGroup3')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup3','fillingsGroup3')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup3','fillingsGroup3')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+  
+              <!-- four Select Fillings -->
+              <div class="mt-5 allNone" id="fillingsGroup3">
+                <h3>Select Fillings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'fillingsGroup3','ToppingsGroup3')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup3','ToppingsGroup3')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup3','ToppingsGroup3')" value="Shrimp">SHRIMP</button>
+                 
+                </div>
+              </div>
+                <!-- five Toppings -->
+              <div class="mt-5 allNone" id="ToppingsGroup3">
+                <h3>Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup3','garnishesGroup3')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup3','garnishesGroup3')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup3','garnishesGroup3')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup3','garnishesGroup3')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'ToppingsGroup3','garnishesGroup3')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup3','garnishesGroup3')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup3','garnishesGroup3')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+                <!-- six Garnishes & Sauces-->
+              <div class="mt-5 allNone" id="garnishesGroup3">
+                <h3>Garnishes & Sauces</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value)" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value)" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chicken">CHICKEN</button>
+   
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- sixth tab -->
+  
+            <div id="Sides" class="tabcontent">
+              <h2 class="mb-3 totalMainHeading">SIDES</h2>
+               <!--one size List -->
+               <form class="selectProtein1" action="">
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" checked onclick="largeSize(this.value)" value="small" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Small Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="regular" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Regular Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="large" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Large Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="bowl" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Mucho Burrito</label>
+                </label>
+              </form>
+              <!-- two Select Base -->
+              <div class="mt-5" id="baseGroup4">
+                <h3>Select Base</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select4 Protein" onclick="jsonFetch (this.value,'baseGroup4','toppingsGroup4')" value="brownRice">BROWN RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup4','toppingsGroup4')" value="CilantroRice">CILANTRO LIME RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup4','toppingsGroup4')" value="Romaine">ROMAINE LETTUCE</button>
+                </div>
+              </div>
+              <!-- three Select Toppings -->
+              <div class="mt-5 allNone" id="toppingsGroup4">
+                <h3>Select Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup4','fillingsGroup4')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup4','fillingsGroup4')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup4','fillingsGroup4')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup4','fillingsGroup4')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'toppingsGroup4','fillingsGroup4')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup4','fillingsGroup4')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup4','fillingsGroup4')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+  
+              <!-- four Select Fillings -->
+              <div class="mt-5 allNone" id="fillingsGroup4">
+                <h3>Select Fillings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'fillingsGroup4','ToppingsGroup4')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup4','ToppingsGroup4')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup4','ToppingsGroup4')" value="Shrimp">SHRIMP</button>
+                 
+                </div>
+              </div>
+                <!-- five Toppings -->
+              <div class="mt-5 allNone" id="ToppingsGroup4">
+                <h3>Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup4','garnishesGroup4')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup4','garnishesGroup4')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup4','garnishesGroup4')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup4','garnishesGroup4')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'ToppingsGroup4','garnishesGroup4')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup4','garnishesGroup4')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup4','garnishesGroup4')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+                <!-- six Garnishes & Sauces-->
+              <div class="mt-5 allNone" id="garnishesGroup4">
+                <h3>Garnishes & Sauces</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value)" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value)" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chicken">CHICKEN</button>
+   
+                </div>
+              </div>
+  
+  
+            </div>
+  
+            <!-- seventh tab -->
+  
+            <div id="Desserts" class="tabcontent">
+              <h2 class="mb-3 totalMainHeading">DESSERTS</h2>
+               <!--one size List -->
+               <form class="selectProtein1" action="">
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" checked onclick="largeSize(this.value)" value="small" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Small Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="regular" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Regular Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="large" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Large Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="bowl" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Mucho Burrito</label>
+                </label>
+              </form>
+              <!-- two Select Base -->
+              <div class="mt-5" id="baseGroup5">
+                <h3>Select Base</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select4 Protein" onclick="jsonFetch (this.value,'baseGroup5','toppingsGroup5')" value="brownRice">BROWN RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup5','toppingsGroup5')" value="CilantroRice">CILANTRO LIME RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup5','toppingsGroup5')" value="Romaine">ROMAINE LETTUCE</button>
+                </div>
+              </div>
+              <!-- three Select Toppings -->
+              <div class="mt-5 allNone" id="toppingsGroup5">
+                <h3>Select Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup5','fillingsGroup5')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup5','fillingsGroup5')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup5','fillingsGroup5')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup5','fillingsGroup5')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'toppingsGroup5','fillingsGroup5')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup5','fillingsGroup5')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup5','fillingsGroup5')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+  
+  
+              <!-- four Select Fillings -->
+              <div class="mt-5 allNone" id="fillingsGroup5">
+                <h3>Select Fillings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'fillingsGroup5','ToppingsGroup5')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup5','ToppingsGroup5')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup5','ToppingsGroup5')" value="Shrimp">SHRIMP</button>
+                 
+                </div>
+              </div>
+                <!-- five Toppings -->
+              <div class="mt-5 allNone" id="ToppingsGroup5">
+                <h3>Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup5','garnishesGroup5')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup5','garnishesGroup5')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup5','garnishesGroup5')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup5','garnishesGroup5')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'ToppingsGroup5','garnishesGroup5')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup5','garnishesGroup5')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup5','garnishesGroup5')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+                <!-- six Garnishes & Sauces-->
+              <div class="mt-5 allNone" id="garnishesGroup5">
+                <h3>Garnishes & Sauces</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value)" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value)" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chicken">CHICKEN</button>
+   
+                </div>
+              </div>
+  
+            </div>
+  
+            <!-- eighth tab -->
+  
+            <div id="Drinks" class="tabcontent">
+              <h2 class="mb-3 totalMainHeading">DRINKS</h2>
+              <!--one size List -->
+              <form class="selectProtein1" action="">
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" checked onclick="largeSize(this.value)" value="small" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault2">Small Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="regular" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Regular Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="large" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Large Burrito</label>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" onclick="largeSize(this.value)" value="bowl" />
+                  <span class="checkmark"></span>
+                  <label class="form-check-label" for="flexRadioDefault1">Mucho Burrito</label>
+                </label>
+              </form>
+              <!-- two Select Base -->
+              <div class="mt-5" id="baseGroup6">
+                <h3>Select Base</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select4 Protein" onclick="jsonFetch (this.value,'baseGroup6','toppingsGroup6')" value="brownRice">BROWN RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup6','toppingsGroup6')" value="CilantroRice">CILANTRO LIME RICE</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'baseGroup6','toppingsGroup6')" value="Romaine">ROMAINE LETTUCE</button>
+                </div>
+              </div>
+              <!-- three Select Toppings -->
+               <div class="mt-5 allNone" id="toppingsGroup6">
+                <h3>Select Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup6','fillingsGroup6')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup6','fillingsGroup6')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup6','fillingsGroup6')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup6','fillingsGroup6')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'toppingsGroup6','fillingsGroup6')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'toppingsGroup6','fillingsGroup6')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'toppingsGroup6','fillingsGroup6')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+  
+  
+              <!-- four Select Fillings -->
+              <div class="mt-5 allNone" id="fillingsGroup6">
+                <h3>Select Fillings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'fillingsGroup6','ToppingsGroup6')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup6','ToppingsGroup6')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'fillingsGroup6','ToppingsGroup6')" value="Shrimp">SHRIMP</button>
+                 
+                </div>
+              </div>
+                <!-- five Toppings -->
+              <div class="mt-5 allNone" id="ToppingsGroup6">
+                <h3>Toppings</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup6','garnishesGroup6')" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup6','garnishesGroup6')" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup6','garnishesGroup6')" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup6','garnishesGroup6')" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value,'ToppingsGroup6','garnishesGroup6')" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value,'ToppingsGroup6','garnishesGroup6')" value="Chicken">CHICKEN</button>
+                  <button class="select Protein" onclick="jsonFetch (this.value,'ToppingsGroup6','garnishesGroup6')" value="porkCarnitas">PORK CARNITAS</button>
+  
+                </div>
+              </div>
+                <!-- six Garnishes & Sauces-->
+              <div class="mt-5 allNone" id="garnishesGroup6">
+                <h3>Garnishes & Sauces</h3>
+                <div class="selectProtein1 mt-3">
+                  <button class="select Protein" onclick="jsonFetch (this.value)" value="BeefBarbacoa">BEEF BARBACOA</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Steak">STEAK</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Shrimp">SHRIMP</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chorizo">CHORIZO</button>
+                  <button class="select3 Protein" onclick="jsonFetch (this.value)" value="plantBased"> PLANT-BASED CRUMBLE</button>
+                  <button class="select2 Protein" onclick="jsonFetch (this.value)" value="Chicken">CHICKEN</button>
+   
+                </div>
+              </div>
+  
+  
+  
+            </div>
+  
+  
+  
+  
+          </div>
+        <div class="rightSectionManu">
+          <div class="mainManu">
+            <div class="secondCalculate">
+              <div class="nutrition-facts-table">
+                <div class="mainHeadingNutrition">
+                  <h2>Calculator</h2>
+                </div>
+                <div class="nutritionNameList">
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Serving Size</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-serving">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Calories</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-calories">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Fat</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-fat">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Saturated Fat</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-satfat">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Trans Fat</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-trans">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Cholesterol</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-cholesterol">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Sodium</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-sodium">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Carbohydrate</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-carbs">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Fiber</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-fiber">0</span>
+                        g
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Sugars</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-sugar">0</span> g
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nutritionName">
+                    <div class="widthContainer">
+                      <div colspan="2">Protein</div>
+                      <div class="tdSpan">
+                        <span class="nutrition-facts-protein">0</span> g
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+  
+                <!-- <table class="nutrition-facts-table">
+             
+                <tbody id="nutrition-values">
+                 
+                 
+                 
+                 
+                  <tr>
+                    <th colspan="2">Vitamin A</th>
+                    <td class="tdSpan">
+                      <span class="nutrition-facts-va">0</span>% dv
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="2">Vitamin C</th>
+                    <td class="tdSpan">
+                      <span class="nutrition-facts-vc">0</span>% dv
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="2">Calcium</th>
+                    <td class="tdSpan">
+                      <span class="nutrition-facts-calcium">0</span>% dv
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="2">Iron</th>
+                    <td class="tdSpan">
+                      <span class="nutrition-facts-iron">0</span>% dv
+                    </td>
+                  </tr>
+                </tbody>
+              </table> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="calculator-container">
+      <button class="toggle-button" onclick="toggleCalculator()"><img src="https://muchoburrito.com/wp-content/uploads/2024/07/Group-658.png" alt=""></button>
+      <div id="first-calculator" class="first-calculator-content">
+        <div class="first-nutrition-item"><span class="nutrition-facts-calories">0</span>Calories</div>
+        <div class="first-nutrition-item"><div><span class="nutrition-facts-trans">0</span> g</div>Trans Fat</div>
+        <div class="first-nutrition-item"><div><span class="nutrition-facts-fiber">0</span> g</div>Fiber</div>
+        <div class="first-nutrition-item"><div><span class="nutrition-facts-carbs">0</span> g</div>Carbs</div>
+      </div>
+  
+      <div id="calculator" class="calculator-content">
+        <img src="https://muchoburrito.com/wp-content/uploads/2024/07/Layer.png" class="crossSVG" onclick="Xmark()" alt="">
+        <div class="nutrition-info">
+          <h2>Calculator</h2>
+          <div class="nutrition-item">Serving Size <div><span class="nutrition-facts-serving">0</span> g</div></div>
+          <div class="nutrition-item">Calories<span class="nutrition-facts-calories">0</span></div>
+          <div class="nutrition-item">Fat<div><span class="nutrition-facts-fat">0</span> g</div></div>
+          <div class="nutrition-item">Saturated Fat<div><span class="nutrition-facts-satfat">0</span> g</div></div>
+          <div class="nutrition-item">Trans Fat<div><span class="nutrition-facts-trans">0</span> g</div></div>
+          <div class="nutrition-item">Cholesterol<div><span class="nutrition-facts-cholesterol">0</span> g</div></div>
+          <div class="nutrition-item">Sodium<div><span class="nutrition-facts-sodium">0</span> g</div></div>
+          <div class="nutrition-item">Carbohydrate<div><span class="nutrition-facts-carbs">0</span> g</div></div>
+          <div class="nutrition-item">Fiber<div><span class="nutrition-facts-fiber">0</span> g</div></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+ </body>
+</html>
