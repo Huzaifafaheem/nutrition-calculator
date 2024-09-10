@@ -277,46 +277,67 @@ function burritoIngredientsChildFun(buttonValue) {
 
 
 // second function first type button
-let selectedValues = {} ;
-function burritoIngredients(burritoButton, buttonValue ) {
 
+let sizeChanged = false;
+let previousSize = null;  // Track the previously selected size
+let selectedValues = {};
 
-  const {currentArrayName} = burritoIngredientsChildFun(buttonValue);
-   
+function burritoIngredients(burritoButton, buttonValue) {
+  const { currentArrayName } = burritoIngredientsChildFun(buttonValue);
+
+  // Initialize selectedValues for the current array if it doesn't exist
   if (!selectedValues[currentArrayName]) {
     selectedValues[currentArrayName] = {};
   }
+  
+  const currentMultiplier = multipliers[currentSize];
+  const newMultiplier = multipliers[newSize2];
+  
+  // Check if the size has actually changed
+  if (previousSize !== currentSize) {
+    sizeChanged = true;  // Size has changed
+  } else {
+    sizeChanged = false;  // Size has not changed
+  }
 
+  // Iterate through the burritoButton object to update the values
   for (let key in burritoButton) {
     if (burritoButton.hasOwnProperty(key)) {
       const newValue = burritoButton[key];
-     
-      if (selectedValues[currentArrayName][key] !== undefined) {
-        cumulativeTotals[key] -= selectedValues[currentArrayName][key];
-      }
-       // Add the new value to the cumulative totals
-      //  console.log(cumulativeTotals[key]);
-       cumulativeTotals[key] += newValue;
-        console.log(newValue);
 
-        const spanElement = document.querySelectorAll(`.nutrition-facts-${key.toLowerCase()}`);
-        spanElement.forEach(spanElement => {
-        if (spanElement) {
-          // addClassToProteinButtons(buttonValue)
-          spanElement.textContent =  cumulativeTotals[key];
-
+      // If a previous value exists, subtract it from cumulative totals
+      if (selectedValues[currentArrayName][key] !== undefined){
+        if(sizeChanged){  
+          // If the size has changed, subtract the old value with the multiplier applied
+          cumulativeTotals[key] -= selectedValues[currentArrayName][key] * newMultiplier ;
+        }else {
+          // If the size has not changed, subtract without the multiplier 
+          cumulativeTotals[key] -= selectedValues[currentArrayName][key];
         }
-        });
+      }
 
-      // Store the new value as the previous value for next time
- 
+      // Add the new value to the cumulative totals (with multiplier if necessary)
+      cumulativeTotals[key] += newValue;
+      // Update the UI with the new cumulative totals
+      const spanElements = document.querySelectorAll(`.nutrition-facts-${key.toLowerCase()}`);
+      spanElements.forEach(spanElement => {
+        if (spanElement) {
+          spanElement.textContent = cumulativeTotals[key];
+        }
+      });
+
+      // Store the new value for next time (to compare in future calculations)
       selectedValues[currentArrayName][key] = newValue;
-      // console.log(newValue);
-      
     }
   }
+
+  // After processing, update previousSize to the currentSize
+  previousSize = currentSize;
+
+  // Call the function to add classes or apply styles to the buttons
   addClassToProteinButtons(buttonValue, currentArrayName);
 }
+
 
 
 
@@ -326,7 +347,7 @@ let isToggled = {}
 
 function viewMenu(nutritionMenu , buttonValue) {
 
-  if (!isToggled.hasOwnProperty(buttonValue)) {
+  if(!isToggled.hasOwnProperty(buttonValue)) {
     isToggled[buttonValue] = false; // Initialize if not present
   }
  
@@ -360,7 +381,7 @@ function viewMenu(nutritionMenu , buttonValue) {
 // convert to different size.
 
 let currentSize = "small";
-
+let newSize2 = {}
 const multipliers = {
   small: 1,
   regular: 2,
@@ -369,20 +390,18 @@ const multipliers = {
 };
 
 function largeSize(newSize) {
+  newSize2 = newSize    
   const currentMultiplier = multipliers[currentSize];
   const newMultiplier = multipliers[newSize];
   
-    // console.log(selectedValues);
-    console.log(cumulativeTotals);
+   // console.log(selectedValues);
+   // console.log(cumulativeTotals);
+    selectedValues
 
-    for (let key in cumulativeTotals) {
+  for (let key in cumulativeTotals) {
       if (cumulativeTotals.hasOwnProperty(key)) {
 
         cumulativeTotals[key] = (cumulativeTotals[key] / currentMultiplier) * newMultiplier;
-        
- 
-
-
 
         const spanElement = document.querySelectorAll(`.nutrition-facts-${key.toLowerCase()}`);
         spanElement.forEach(spanElement => {
@@ -390,10 +409,8 @@ function largeSize(newSize) {
            spanElement.textContent = cumulativeTotals[key];
          }
         });
-         
-        
       }
-  }
+  }  
 
  
     let updatedIngredients = {};
